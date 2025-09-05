@@ -1,0 +1,58 @@
+"use client";
+import { useState } from "react";
+
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: "",  phone: "", email: "", message: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form submitted (dummy) 👉 " + JSON.stringify(form, null, 2));
+  };
+
+  return (
+    <main className="py-20 px-6 max-w-3xl mx-auto">
+      <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-2xl p-8 space-y-6"
+      >
+        <div>
+          <label className="block mb-2 font-medium">Name</label>
+          <input
+            type="text"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            className="w-full border rounded-lg px-4 py-2"
+            required
+          />
+        </div>
+        <div>
+          <label className="block mb-2 font-medium">Email</label>
+          <input
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            className="w-full border rounded-lg px-4 py-2"
+            required
+          />
+        </div>
+        <div>
+          <label className="block mb-2 font-medium">Message</label>
+          <textarea
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
+            className="w-full border rounded-lg px-4 py-2"
+            rows={5}
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+  );
+}
