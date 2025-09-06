@@ -5,13 +5,21 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
+    // Explicitly define payload to ensure all fields are sent
+    const payload = {
+      name: body.name,
+      email: body.email,
+      phone: body.phone,   // ✅ ensure phone is included
+      message: body.message,
+    };
+
     const SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbyyVNii3RI1hkKtaR04Rnn8qeCVy69HMHNTAGvcdjOlG7qlRiAY9OBJWKIgxxrcvCFy/exec";
 
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify(payload),
     });
 
     const data = await response.json();
@@ -24,6 +32,32 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ result: "error", message }, { status: 500 });
   }
 }
+
+// import { NextRequest, NextResponse } from "next/server";
+
+// export async function POST(req: NextRequest) {
+//   try {
+//     const body = await req.json();
+
+//     const SCRIPT_URL =
+//       "https://script.google.com/macros/s/AKfycbyyVNii3RI1hkKtaR04Rnn8qeCVy69HMHNTAGvcdjOlG7qlRiAY9OBJWKIgxxrcvCFy/exec";
+
+//     const response = await fetch(SCRIPT_URL, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(body),
+//     });
+
+//     const data = await response.json();
+//     return NextResponse.json(data);
+//   } catch (error) {
+//     let message = "Unknown error";
+//     if (error instanceof Error) {
+//       message = error.message;
+//     }
+//     return NextResponse.json({ result: "error", message }, { status: 500 });
+//   }
+// }
 
 // import { NextRequest, NextResponse } from "next/server";
 
