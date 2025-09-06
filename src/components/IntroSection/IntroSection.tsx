@@ -44,7 +44,7 @@ const IntroSection = () => {
 
           <p className="text-gray-600 mb-4 leading-relaxed text-lg">
             From <span className="font-semibold">quick battery & keyboard replacements</span> 
-            to <span className="font-semibold">data recovery and software solutions</span>, 
+             to <span className="font-semibold">data recovery and software solutions</span>, 
             we cover a wide range of services designed to keep your laptop running smoothly.
           </p>
 
