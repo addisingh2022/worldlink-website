@@ -1,9 +1,20 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 export default function WhatsAppButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => window.scrollY > 200 ? setVisible(true) : setVisible(false);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
   return (
-    <a
-      href="https://wa.me/+917301955807"
-      target="_blank"
-      rel="noopener noreferrer"
+    <a href="https://wa.me/+917301955807" target="_blank" rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-colors"
     >
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
