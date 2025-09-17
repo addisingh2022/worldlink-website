@@ -91,7 +91,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Top Stats */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 text-center overflow-x-auto scrollbar-hide"
+          className="grid grid-cols-3 gap-6 mb-12 text-center overflow-x-auto scrollbar-hide"
         >
           <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.6 }}>
             <h3 className="text-3xl sm:text-4xl font-bold text-blue-500"><CountUp end={12} />+</h3>
@@ -147,6 +147,7 @@ export default function Testimonials() {
     </section>
   );
 }
+
 
 // "use client";
 
