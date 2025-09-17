@@ -1,22 +1,20 @@
+"use client";
+
 import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedinIn,
-  FaPinterestP,
-  FaHeart,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer
-      id="footer" 
+    <motion.footer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      id="footer"
       className="bg-black text-white py-10 px-5"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {}
+        {/* Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-white">
             World<span className="text-blue-500">Link</span>
@@ -26,31 +24,22 @@ const Footer = () => {
             and premium spares, ensuring reliable doorstep service and warranty
             for your peace of mind.
           </p>
-
-          {}
           <div className="flex space-x-4 mt-5">
             <a href="#" className="hover:text-blue-500">
               <FaFacebookF size={20} />
             </a>
-            <a href="#" className="hover:text-blue-500">
-              <FaInstagram size={20} />
-            </a>
-            <a href="#" className="hover:text-blue-500">
-              <FaYoutube size={20} />
-            </a>
-            <a href="#" className="hover:text-blue-500">
-              <FaTwitter size={20} />
-            </a>
-            <a href="#" className="hover:text-blue-500">
+            <a
+              href="https://www.linkedin.com/in/worldlink-technician-hp-dell-lenovo-acer-laptop-repair-service-449161266/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500"
+            >
               <FaLinkedinIn size={20} />
-            </a>
-            <a href="#" className="hover:text-blue-500">
-              <FaPinterestP size={20} />
             </a>
           </div>
         </div>
 
-        {}
+        {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-blue-500">Call us on</h3>
           <p className="mt-2 text-xl font-bold">
@@ -77,11 +66,9 @@ const Footer = () => {
           </p>
         </div>
 
-        {}
+        {/* Location / Maps */}
         <div>
-          <h3 className="text-lg font-semibold text-blue-500">
-            Our Service Center
-          </h3>
+          <h3 className="text-lg font-semibold text-blue-500">Our Service Center</h3>
           <p className="mt-2 text-gray-300">
             Shashi Garden, Mayur Vihar Phase 1, New Delhi - 110091
           </p>
@@ -96,7 +83,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {}
+      {/* Bottom Copyright */}
       <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-400">
         <p>© {new Date().getFullYear()} Worldlink Repair - All Rights Reserved.</p>
         <p className="mt-2 flex items-center justify-center gap-2 text-gray-400">
@@ -111,7 +98,7 @@ const Footer = () => {
           </a>
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

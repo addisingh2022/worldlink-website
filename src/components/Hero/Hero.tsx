@@ -5,10 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[70vh]">
+    <section className="relative w-full h-[70vh] min-h-[70vh]">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 3000 }}
@@ -19,10 +20,16 @@ export default function Hero() {
           <SwiperSlide key={i}>
             <div className="w-full h-[70vh] relative">
               <Image src={src} alt={`slide-${i}`} fill className="object-cover" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <motion.div
+                className="absolute inset-0 bg-black/40 flex items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.2 }}
+              >
                 <h1 className="text-white text-4xl md:text-6xl font-bold text-center">
+                
                 </h1>
-              </div>
+              </motion.div>
             </div>
           </SwiperSlide>
         ))}

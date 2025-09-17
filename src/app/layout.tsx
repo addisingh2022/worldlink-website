@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Worldlink Laptop Repair Services",
     description:
       "Fast, reliable, and affordable laptop repair solutions with warranty.",
-    url: "https://worldlink-repair.com", 
+    url: "https://worldlink-repair.com",
     siteName: "Worldlink",
     images: [
       {
