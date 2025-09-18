@@ -85,7 +85,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-400">
-        <p>© {new Date().getFullYear()} Worldlink Repair - All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Worldlink Technician - All Rights Reserved.</p>
         <p className="mt-2 flex items-center justify-center gap-2 text-gray-400">
           Developed with <FaHeart className="text-red-500" /> by{" "}
           <a
