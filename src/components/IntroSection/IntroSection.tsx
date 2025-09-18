@@ -32,7 +32,7 @@ const IntroSection = () => {
         {/* Text Section */}
         <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">
-            Worldlink Repair Services
+            Worldlink Technician
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
@@ -55,8 +55,8 @@ const IntroSection = () => {
           </p>
 
           <p className="text-gray-600 mb-4 leading-relaxed text-lg">
-            From <span className="font-semibold">quick battery & keyboard replacements</span> 
-             to <span className="font-semibold">data recovery and software solutions</span>, 
+            From <span className="font-semibold">quick battery & keyboard replacements</span>{" "}
+            to <span className="font-semibold">data recovery and software solutions</span>, 
             we cover a wide range of services designed to keep your laptop running smoothly.
           </p>
 
@@ -70,13 +70,16 @@ const IntroSection = () => {
           {/* Features List */}
           <ul className="space-y-3 text-gray-700 text-base md:text-lg">
             <li className="flex items-center gap-3">
+              <FaStethoscope className="text-blue-500" /> No Fix No Fees
+            </li>
+            <li className="flex items-center gap-3">
               <FaStethoscope className="text-blue-500" /> Free Diagnose & Same-Day Delivery
             </li>
             <li className="flex items-center gap-3">
               <FaKeyboard className="text-blue-500" /> Battery, Keyboard & Key Replacement
             </li>
             <li className="flex items-center gap-3">
-              <FaTruck className="text-blue-500" /> Free Pick & Drop in Noida & Nearby Areas
+              <FaTruck className="text-blue-500" /> Pick & Drop in Noida & Nearby Areas
             </li>
             <li className="flex items-center gap-3">
               <FaShieldAlt className="text-blue-500" /> Genuine Parts with 30 Days Warranty
